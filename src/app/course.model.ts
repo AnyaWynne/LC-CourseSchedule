@@ -16,6 +16,8 @@ export class Course {
         this.endTime = endTime,
         this.credits = credits
     }
-
+getDays() {
+    return this.days.join("/");
+}
 
 }
