@@ -1,12 +1,12 @@
 import { stripGeneratedFileSuffix } from '@angular/compiler/src/aot/util';
 
 export class Course {
-    title: string;
-    code: string;
-    days: string[];
-    startTime: string;
-    endTime: string;
-    credits: number;
+   public title: string;
+   public code: string;
+   public days: string[];
+   public startTime: string;
+   public endTime: string;
+   public credits: number;
 
     constructor(title: string, code: string, days: string[], startTime: string, endTime: string, credits: number){
         this.title = title,
