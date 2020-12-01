@@ -29,17 +29,32 @@ export class CoursesComponent implements OnInit {
       new Course("Happy and Sad", "LC230", ["Wed", "Fri"], "6:00 PM", "7:00 PM", 2),
 ];
 
-this.availableCourses = this.allCourses.slice(0);
+this.sort(this.allCourses);
+this.availableCourses = this.allCourses
 
+
+  }
+
+  sort(array: Course []): void {
+    array.sort(function(a: Course, b: Course): number {
+      if (a["code"] < b["code"]){
+        return -1;
+      } else if (a["code"] > b["code"]) {
+        return 1;
+      }
+        return 0;
+    });
   }
 
   addCourse(index: number): void {
     this.myCourses.push(this.availableCourses[index]);
+    this.sort(this.myCourses);
     this.availableCourses.splice(index, 1);
   }
 
   removeCourse (index: number): void {
     this.availableCourses.push(this.myCourses[index]);
+    this.sort(this.availableCourses);
     this.myCourses.splice(index, 1);
   }
 
